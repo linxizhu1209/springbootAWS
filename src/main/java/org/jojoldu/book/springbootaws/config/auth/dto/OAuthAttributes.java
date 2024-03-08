@@ -1,10 +1,12 @@
 package org.jojoldu.book.springbootaws.config.auth.dto;
 
+
 import lombok.Builder;
 import lombok.Getter;
 import org.jojoldu.book.springbootaws.domain.user.Role;
 import org.jojoldu.book.springbootaws.domain.user.User;
 
+import java.util.Collections;
 import java.util.Map;
 
 @Getter
@@ -47,8 +49,8 @@ public class OAuthAttributes {
      }
 
      private static OAuthAttributes ofNaver(String userNameAttributeName, Map<String,Object> attributes){
-        Map<String,Object> response = (Map<String, Object>) attributes.get("response");
-
+//        Map<String,Object> response = (Map<String, Object>) attributes.get("response");
+         Map<String,Object> response = attributes.containsKey("response") ? (Map<String, Object>) attributes.get("response") : Collections.emptyMap();
         return OAuthAttributes.builder().name((String) response.get("name")).email((String) response.get("email"))
                 .picture((String) response.get("profile_image")).attributes(response)
                 .nameAttributeKey(userNameAttributeName).build();

@@ -1,8 +1,5 @@
 package org.jojoldu.book.springbootaws.web.dto;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
