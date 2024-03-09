@@ -17,7 +17,7 @@ script: "./gradlew clean build"
 before_install:
   - chmod +x gradlew
 before_deploy:
-  - zip -r springbootAWS
+  - zip -r springbootAWS *
   - mkdir -p deploy
   - mv springbootAWS.zip deploy/springbootAWS.zip
 
