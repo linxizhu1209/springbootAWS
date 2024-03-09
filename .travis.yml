@@ -26,7 +26,7 @@ deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY
-    bucket: postingservice-build # s3 버킷
+    bucket: postingservice-builld # s3 버킷
     region: ap-northeast-2
     skip_cleanup: true
     acl: private # zip 파일 접근을 private 로
@@ -36,7 +36,7 @@ deploy:
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
-    bucket: postingservice-build
+    bucket: postingservice-builld
     key: springbootAWS.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip # 압축확장자
     application: postingService # 웹 콘솔에서 등록한 codeDeploy애플리케이션
