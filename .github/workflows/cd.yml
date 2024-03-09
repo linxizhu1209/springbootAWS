@@ -33,7 +33,7 @@ jobs:
         shell: bash
         
       - name: copy Application.properties
-        run: ./src/main/resources/application.properties
+        run:  echo application.properties > ./src/main/resources/application.properties
         shell: bash
         
       # gradle 권한 설정
