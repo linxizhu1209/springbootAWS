@@ -22,7 +22,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 
         // 접근권한 설정
-        http.csrf(AbstractHttpConfigurer::disable)
+        http.csrf((csrf) -> csrf.disable())
                 .headers((headers)->headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
                 .authorizeHttpRequests(auth-> auth.requestMatchers("/","/css/**","/images/**","/js/**","/h2-console/**",
                         "/profile").permitAll()
